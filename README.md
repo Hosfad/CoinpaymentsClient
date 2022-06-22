@@ -5,7 +5,7 @@ Coinpayments java wrapper for easy interactions with the Coinpayments gateway
 Usage : 
 
 Initialize client :
-```
+```java
 CoinpaymentsClient client = new CoinpaymentsClient("PUBLIC_API_KEY" ,"PRIVATE_API_KEY");
 ```
 
