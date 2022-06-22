@@ -28,3 +28,8 @@ Get exchange rates and supported coins :
         System.out.println(result.image);
         System.out.println(result.confirms);
 ```
+Get callback address :
+```java
+        String address = client.getCallBackAddress("BTC");
+        System.out.println(address);
+```
