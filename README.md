@@ -17,5 +17,4 @@ System.out.println(accountInfo.username);
 System.out.println(accountInfo.email);
 System.out.println(accountInfo.merchant_id);
 System.out.println(accountInfo.public_name);
-  
 ```
