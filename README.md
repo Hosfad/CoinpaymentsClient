@@ -7,12 +7,12 @@ Usage :
 
 Initialize client :
 ```java
-        CoinpaymentsClient client = new CoinpaymentsClient("PUBLIC_API_KEY" ,"PRIVATE_API_KEY");
+     CoinpaymentsClient client = new CoinpaymentsClient("PUBLIC_API_KEY" ,"PRIVATE_API_KEY");
 ```
 
 Get basic account information :
 ```java
-AccountInformationResponse accountInfo = client.getBasicAccountInformation();
+     AccountInformationResponse accountInfo = client.getBasicAccountInformation();
         System.out.println(accountInfo.username);
         System.out.println(accountInfo.email);
         System.out.println(accountInfo.merchant_id);
@@ -20,8 +20,8 @@ AccountInformationResponse accountInfo = client.getBasicAccountInformation();
 ```
 Get exchange rates and supported coins : 
 ```java
-        ExchangeRatesResponse exchangeRates = client.getExchangeRates();
-        ExchangeRatesResponse.Result result = exchangeRates.result.get("BTC");
+     ExchangeRatesResponse exchangeRates = client.getExchangeRates();
+     ExchangeRatesResponse.Result result = exchangeRates.result.get("BTC");
         System.out.println(result.is_fiat);
         System.out.println(result.name);
         System.out.println(result.rate_btc);
