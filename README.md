@@ -10,7 +10,7 @@ CoinpaymentsClient client = new CoinpaymentsClient("PUBLIC_API_KEY" ,"PRIVATE_AP
 ```
 
 Get basic account information :
-```
+```java
 AccountInformationResponse accountInfo = client.getBasicAccountInformation();
 System.out.println(accountInfo.username);
 System.out.println(accountInfo.email);
