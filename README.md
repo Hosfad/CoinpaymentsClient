@@ -3,10 +3,14 @@ Coinpayments java wrapper for easy interactions with the Coinpayments gateway
 
 Gonna be adding more features as i get the time to do so , Will eventually have support for all Coinpayments requests
 
-Usage : 
+
 **REQUIREMENTS**
 GSON 
 Apache commons-codec-1.15
+
+
+
+Usage : 
 
 Initialize client :
 ```java
