@@ -21,15 +21,15 @@ Usage :
         JsonObject accountInfo = api.call("get_basic_info");
         System.out.println(accountInfo.get("username").getAsString());
         System.out.println(accountInfo.get("email").getAsString());
-   ```
 ```
+```Java
         // Getting rates
         JsonObject ratesInfo = api.call("rates");
         System.out.println(ratesInfo.get("is_fiat").getAsString());
         System.out.println(ratesInfo.get("rate_btc").getAsString());
      ```
 
-```
+```Java
         // Creating a transaction
                                       // ammount in dollar
         JsonObject transactionInfo = api.set("amount", 10)
