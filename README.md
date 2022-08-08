@@ -9,27 +9,27 @@ GSON
 
 Apache commons-codec-1.15
 
-
+Initialize client : 
+```
+CoinPaymentsAPI api = new CoinPaymentsAPI("PUBLIC_KEY", "PRIVATE_KEY");
+```
 
 Usage : 
 
 ```
-    static CoinPaymentsAPI api = new CoinPaymentsAPI("PUBLIC_KEY", "PRIVATE_KEY");
-
-    public static void main(String[] args) {
-        // Getting basic account information
+         // Getting basic account information
         JsonObject accountInfo = api.call("get_basic_info");
         System.out.println(accountInfo.get("username").getAsString());
         System.out.println(accountInfo.get("email").getAsString());
-        // ...
-
+   ```
+```
         // Getting rates
         JsonObject ratesInfo = api.call("rates");
         System.out.println(ratesInfo.get("is_fiat").getAsString());
         System.out.println(ratesInfo.get("rate_btc").getAsString());
-        // ...
+     ```
 
-
+```
         // Creating a transaction
                                       // ammount in dollar
         JsonObject transactionInfo = api.set("amount", 10)
@@ -41,7 +41,4 @@ Usage :
         System.out.println(transactionInfo.get("txn_id").getAsString());
         System.out.println(transactionInfo.get("status_url").getAsString());
         System.out.println(transactionInfo.get("qrcode_url").getAsString());
-        // ...
-
-    }
-    ```
+      ```
