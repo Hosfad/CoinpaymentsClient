@@ -1,7 +1,6 @@
 # Coinpayments Client
 Coinpayments java wrapper for easy interactions with the Coinpayments gateway 
 
-Gonna be adding more features as i get the time to do so , Will eventually have support for all Coinpayments requests
 
 
 **REQUIREMENTS** :
@@ -14,31 +13,35 @@ Apache commons-codec-1.15
 
 Usage : 
 
-Initialize client :
-```java
-     CoinpaymentsClient client = new CoinpaymentsClient("PUBLIC_API_KEY" ,"PRIVATE_API_KEY");
 ```
+    static CoinPaymentsAPI api = new CoinPaymentsAPI("PUBLIC_KEY", "PRIVATE_KEY");
 
-Get basic account information :
-```java
-     AccountInformationResponse accountInfo = client.getBasicAccountInformation();
-        System.out.println(accountInfo.username);
-        System.out.println(accountInfo.email);
-        System.out.println(accountInfo.merchant_id);
-        System.out.println(accountInfo.public_name);
-```
-Get exchange rates and supported coins : 
-```java
-     ExchangeRatesResponse exchangeRates = client.getExchangeRates();
-     ExchangeRatesResponse.Result result = exchangeRates.result.get("BTC");
-        System.out.println(result.is_fiat);
-        System.out.println(result.name);
-        System.out.println(result.rate_btc);
-        System.out.println(result.image);
-        System.out.println(result.confirms);
-```
-Get callback address :
-```java
-        String address = client.getCallBackAddress("BTC");
-        System.out.println(address);
-```
+    public static void main(String[] args) {
+        // Getting basic account information
+        JsonObject accountInfo = api.call("get_basic_info");
+        System.out.println(accountInfo.get("username").getAsString());
+        System.out.println(accountInfo.get("email").getAsString());
+        // ...
+
+        // Getting rates
+        JsonObject ratesInfo = api.call("rates");
+        System.out.println(ratesInfo.get("is_fiat").getAsString());
+        System.out.println(ratesInfo.get("rate_btc").getAsString());
+        // ...
+
+
+        // Creating a transaction
+                                      // ammount in dollar
+        JsonObject transactionInfo = api.set("amount", 10)
+                .set("currency1", "USD")
+                .set("currency2", "BTC")
+                .set("buyer_name", "John doe")
+                .set("buyer_email", "Reeeeeeeeeee@dev.com")
+                .call("create_transaction");
+        System.out.println(transactionInfo.get("txn_id").getAsString());
+        System.out.println(transactionInfo.get("status_url").getAsString());
+        System.out.println(transactionInfo.get("qrcode_url").getAsString());
+        // ...
+
+    }
+    ```
