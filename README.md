@@ -5,8 +5,9 @@ Gonna be adding more features as i get the time to do so , Will eventually have 
 
 
 **REQUIREMENTS**
+```
 GSON 
-Apache commons-codec-1.15
+Apache commons-codec-1.15```
 
 
 
