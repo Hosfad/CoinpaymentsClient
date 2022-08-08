@@ -16,7 +16,7 @@ CoinPaymentsAPI api = new CoinPaymentsAPI("PUBLIC_KEY", "PRIVATE_KEY");
 
 Usage : 
 
-```
+```Java
          // Getting basic account information
         JsonObject accountInfo = api.call("get_basic_info");
         System.out.println(accountInfo.get("username").getAsString());
